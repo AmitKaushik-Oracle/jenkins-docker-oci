@@ -1,0 +1,21 @@
+version: '3'
+services:
+  jenkins:
+    user: "1000:1000"
+    container_name: jenkins
+    image: jenkins-custom:v1
+    build:
+      context: jenkins-docker
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/home/opc/disk1/jenkins/jenkins_home:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/home/opc/.oci:/var/jenkins_home/.oci"
+      - "/home/opc/.ssh:/var/jenkins_home/.ssh"
+    networks:
+      - net
+
+networks:
+   net:
+
