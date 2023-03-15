@@ -5,6 +5,6 @@ docker-compose -f docker-compose-jenkins.yaml build
 
 docker-compose -f docker-compose-jenkins.yaml up
 
-######
+------------
 
 opc user id on Oracle Linux VM need to be same Jenkin user id in the container image
